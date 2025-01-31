@@ -1,0 +1,195 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .navbar{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: red;
+    padding: 20px 120px;
+    justify-content: space-between;
+
+  }
+  .link_wrapper{
+    display: flex;
+    align-items: center;
+   gap: 5%;
+    width: 60%;
+    justify-content: flex-end;
+
+  }
+  .link_wrapper li{
+    list-style: none;
+
+  }
+  li a{
+    text-decoration: none;
+  }
+  h2{
+    text-align: center;
+    font-weight: bolder;
+  }
+  .products{
+    
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+padding: 20px 100px;
+gap: 10px;
+  }
+  .singleProduct{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+/* gap: 10px; */
+  }
+  .bottomSide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .add{
+    border: none;
+    outline: none;
+    width: fit-content;
+    padding:16px;
+    background-color: #a27ac9;
+    border-radius: 12px;
+  }
+  .add:hover{
+    outline: #a27ac9 solid 2px;
+    background-color: #fff;
+    transform: scale(1.2);
+    transition: 0.3s;
+    
+  }
+  .buttonsPagenition{
+    display: flex;
+align-items: center;
+gap: 5px; 
+width: 100%;
+justify-content: center;
+}
+.buttonsPagenition button{
+    font-size: 64px;
+border:none;
+outline:none;
+background-color: transparent;
+}
+.containerForm{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+
+}
+.form{
+    width: 50%;
+    padding-top: 40px;
+    padding: 40px 20px;
+
+}
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+    gap: 10px;
+    /* align-items: center; */
+
+  }
+  
+  .inputWrapper label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .inputWrapper input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .inputWrapper input:focus {
+    border-color: #007bff;
+  }
+  
+  button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease-in-out;
+    width: 100%;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  .cartIcon{
+    position: relative;
+  }
+  .cartIcon span{
+display: flex;
+position: absolute;
+right: 0;
+top: 45%;
+
+background-color: rgb(86, 63, 108);
+color: white;
+width: 30px;
+height: 30px;
+text-align: center;
+border-radius: 50%;
+
+display: flex;
+align-items: center;
+justify-content: center;
+  }
+  .oneProduct{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: space-between;
+    
+   padding: 12px 120px;
+  }
+  .rightSide{
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+  .opration{
+    display: flex;
+    
+    gap: 8px;
+   
+  }
+ 
+  .opration .numberOfProduct{
+   
+    border-radius: 12px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+  }
+  .displayData{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
