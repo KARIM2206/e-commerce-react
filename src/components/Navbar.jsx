@@ -1,37 +1,34 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../redux/slices/authSlice";
+import { FaShoppingCart } from "react-icons/fa";
 import style from "./style.module.css";
-import { useContext } from "react";
-import { AuthContext } from "./context/authContext";
-import { FaShoppingCart } from 'react-icons/fa';
 
 function Navbar() {
-  const { user, setUser } = useContext(AuthContext); 
-  const [isLogged, setIsLogged] = useState(false);
-  const { cart } = useContext(AuthContext);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (user) {
-      setIsLogged(true);
-    } else {
-      setIsLogged(false);
-    }
-  }, [user]);
+  const user = useSelector((state) => state.auth.user);
+  const cart = useSelector((state) => state.cart.items);
 
   const handleLogout = () => {
-    
-    localStorage.removeItem("token");
-    setUser(null);
+    dispatch(logout());
+    navigate("/");
   };
 
   return (
     <nav className={style.navbar}>
       <Link to="/">Logo</Link>
       <ul className={style.link_wrapper}>
-        <li><Link to="/">Home</Link></li>
-        {isLogged ? (
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        {user ? (
           <>
-            <li><Link to="/" onClick={handleLogout}>Sign Out</Link></li>
+            <li>
+              <Link onClick={handleLogout}>Sign Out</Link>
+            </li>
             <li>
               <Link to="/cart" className={style.cartIcon}>
                 <FaShoppingCart size={60} color="black" />
@@ -41,7 +38,9 @@ function Navbar() {
             <li>Welcome, {user.firstName}</li>
           </>
         ) : (
-          <li><Link to="/auth/signIn">Sign In</Link></li>
+          <li>
+            <Link to="/auth/signIn">Sign In</Link>
+          </li>
         )}
       </ul>
     </nav>
